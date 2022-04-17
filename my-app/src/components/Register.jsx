@@ -31,7 +31,7 @@ const Register = () => {
         })
     }
   return (
-    <div>
+    <div className='center'>
        <form className='form' onSubmit={submitForm}>
            <input id='nickName' type="text" placeholder='nickName' onChange={handleChange}/><br></br><br></br>
            <input id='email' type="email" placeholder='email' onChange={handleChange} /><br></br><br></br>

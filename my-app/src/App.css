@@ -7,6 +7,14 @@ th{
   align-items: center;
   margin-bottom: 100px;
 }
+.navbar>button{
+  border: none;
+  background: transparent;
+  color: blue;
+}
+.navbar>button:hover{
+  text-decoration: underline;
+}
 .flats{
   display: flex;
   width: 90%;
@@ -29,4 +37,23 @@ th{
 img{
   width: 200px;
   height: 200px;
+}
+
+.flat_data{
+  margin-bottom: 50px;
+}
+.pages{
+  margin-bottom: 50px;
+  text-align: center;
+}
+.pages>input{
+  width: 100px;
+}
+.pages>p{
+  font-size: 20px;
+  font-weight: bold;
+  color: brown;
+}
+.center{
+  text-align: center;
 }
