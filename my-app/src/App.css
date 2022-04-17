@@ -1,0 +1,32 @@
+th{
+  text-align: center;
+}
+.navbar{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 100px;
+}
+.flats{
+  display: flex;
+  width: 90%;
+  margin: auto;
+  justify-content: space-around;
+  align-items: center;
+  background-color: cornflowerblue;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  color: black;
+}
+.flats:hover{
+  text-decoration: none;
+}
+.flats>div:nth-child(2){
+  margin-left: 30px;
+}
+img{
+  width: 200px;
+  height: 200px;
+}
