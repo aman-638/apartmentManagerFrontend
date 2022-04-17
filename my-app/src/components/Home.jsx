@@ -19,9 +19,12 @@ const Home = () => {
 
             <div className='navbar'>
                 <input type="text" placeholder='Search by  block' onChange={(e) => {
-                     axios.get(`https://apartmentflat-manager.herokuapp.com/flat/block?block=${e.target.value}&size=3`).then((res) => {
-                        setList(res.data.flat);
-                    })
+                    if(e.target.value>="A"&&e.target.value<="C"){
+                        axios.get(`https://apartmentflat-manager.herokuapp.com/flat/block?block=${e.target.value}&size=3`).then((res) => {
+                            setList(res.data.flat);
+                            setPage(res.data.totalPages);
+                        })
+                    }
                 }} />
             </div>
     
@@ -30,10 +33,12 @@ const Home = () => {
                     if(e.target.value==="all"){
                         axios.get(`https://apartmentflat-manager.herokuapp.com/flat`).then((res) => {
                         setList(res.data.flat);
+                        setPage(res.data.totalPages);
                     })}
                     else{
                         axios.get(`https://apartmentflat-manager.herokuapp.com/flat/filter_flat?flat_type=${e.target.value}`).then((res) => {
                         setList(res.data.flat);
+                        setPage(res.data.totalPages);
                       })
                     }
             
@@ -72,6 +77,7 @@ const Home = () => {
                     if(e.target.value>0&&e.target.value<=page){
                     axios.get(`https://apartmentflat-manager.herokuapp.com/flat?page=${e.target.value}&size=3`).then((res) => {
                      setList(res.data.flat);
+                     setPage(res.data.totalPages);
                     })
                     }
                 }}/>

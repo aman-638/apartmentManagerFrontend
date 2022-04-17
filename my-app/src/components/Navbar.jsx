@@ -1,10 +1,8 @@
-import React, { useEffect ,useState} from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState} from 'react'
+import { Link} from 'react-router-dom'
 import '../App.css'
 
 const Navbar = () => {
-    useEffect(() => {
-    },[])
     const [rerender, setRerender] = useState(false);
     
    let apartment_login=JSON.parse(localStorage.getItem("apartment_login"))||false;
