@@ -16,6 +16,14 @@ const Home = () => {
   if(apartment_login===true){
     return (
         <div>
+
+            <div className='navbar'>
+                <input type="text" placeholder='Search by  block' onChange={(e) => {
+                     axios.get(`https://apartmentflat-manager.herokuapp.com/flat/block?block=${e.target.value}&size=3`).then((res) => {
+                        setList(res.data.flat);
+                    })
+                }} />
+            </div>
     
           <div className='navbar'>
           <select name="" id="" onChange={(e) => {
@@ -61,9 +69,11 @@ const Home = () => {
             
             <div className='pages'>
                 <input type="text" placeholder='Enter Page No.' onChange={(e) => {
+                    if(e.target.value>0&&e.target.value<=page){
                     axios.get(`https://apartmentflat-manager.herokuapp.com/flat?page=${e.target.value}&size=3`).then((res) => {
                      setList(res.data.flat);
                     })
+                    }
                 }}/>
                 <p>totalPages:{page}</p>
             </div>
